@@ -5,11 +5,18 @@ const BlogDetails = () => {
   const { id } = useParams();
   const history = useHistory();
 
+  // const {
+  //   data: blog,
+  //   ispending,
+  //   err,
+  // } = useFetch(`http://localhost:8000/posts/${id}`);
   const {
     data: blog,
     ispending,
     err,
-  } = useFetch(`http://localhost:8000/posts/${id}`);
+  } = useFetch(
+    `https://my-json-server.typicode.com/Ahiamata-Gabriel/json-server/posts/${id}`
+  );
 
   const handleDelete = () => {
     fetch('http://localhost:8000/posts/' + blog.id, {
